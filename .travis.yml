@@ -6,7 +6,7 @@ before_install:
   - docker build -t moatef/react-test -f ./client/Dockerfile.dev ./client
 
 scripts:
-  - docker run moatef/react-test npm test -- --coverage
+  - docker run moatef/react-test npm run test -- --coverage
 
 after_seccess:
   - docker build -t moatef/multi-client ./client 
@@ -19,6 +19,6 @@ after_seccess:
   - docker push moatef/multi-nginx
   - docker push moatef/multi-server
   - docker push moatef/multi-worker
-  
+
 
   - 
