@@ -9,13 +9,13 @@ script:
   - docker run muhammadatef/multi-docker npm run test -- --coverage
 
 after_success:
-  - docker build -t moatef/multi-client ./client 
-  - docker biuld -t moatef/multi-nginx ./nginx
-  - docker build -t moatef/multi-server ./server
-  - docker build -t moatef/multi-worker ./worker
+  - docker build -t muhammadatef/multi-client ./client 
+  - docker biuld -t muhammadatef/multi-nginx ./nginx
+  - docker build -t muhammadatef/multi-server ./server
+  - docker build -t muhammadatef/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push moatef/multi-client
-  - docker push moatef/multi-nginx
-  - docker push moatef/multi-server
-  - docker push moatef/multi-worker
+  - docker push muhammadatef/multi-client
+  - docker push muhammadatef/multi-nginx
+  - docker push muhammadatef/multi-server
+  - docker push muhammadatef/multi-worker
