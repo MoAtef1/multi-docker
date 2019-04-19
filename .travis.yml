@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run muhammadatef/multi-docker npm run test -- --coverage
 
-after_seccess:
+after_success:
   - docker build -t moatef/multi-client ./client 
   - docker biuld -t moatef/multi-nginx ./nginx
   - docker build -t moatef/multi-server ./server
