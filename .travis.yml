@@ -10,7 +10,7 @@ script:
 
 after_success:
   - docker build -t muhammadatef/multi-client ./client 
-  - docker biuld -t muhammadatef/multi-nginx ./nginx
+  - docker build -t muhammadatef/multi-nginx ./nginx
   - docker build -t muhammadatef/multi-server ./server
   - docker build -t muhammadatef/multi-worker ./worker
 
