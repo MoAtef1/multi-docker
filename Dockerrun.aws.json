@@ -1,6 +1,6 @@
 {
-    "AWSEBDockerrunVersion": 2 ,
-    "CountainerDefinitions": [
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
         {
             "name": "client",
             "image": "muhammadatef/multi-client",
@@ -33,10 +33,7 @@
                     "containerport": 80
                 }
             ],
-            "links": [
-                "client" ,
-                "server"
-            ],
+            "links": ["client", "server"],
             "memory": 128
                
             
