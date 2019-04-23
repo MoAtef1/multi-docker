@@ -1,41 +1,40 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containerDefinitions": [
+    "containerDefinitions":[
         {
             "name": "client",
             "image": "muhammadatef/multi-client",
             "hostname": "client",
-            "essintial": false,
-            "memory": 128
+            "memory": 128,
+            "essential": false
         },
         {
             "name": "server",
             "image": "muhammadatef/multi-server",
-            "hostname":"api",
-            "essintial": false,
-            "memory": 128
+            "hostname": "api",
+            "memory": 128,
+            "essential": false
         },
         {
             "name": "worker",
-            "image":"muhammadatef/multi-worker",
+            "image": "muhammadatef/multi-worker",
             "hostname": "worker",
-            "essintial": false,
-            "memory": 128
+            "memory": 128,
+            "essential": false
         },
         {
             "name": "nginx",
             "image": "muhammadatef/multi-nginx",
             "hostname": "nginx",
-            "essintial": true,
+            "memory": 128,
             "portMappings": [
                 {
-                    "hostport": 80,
-                    "containerport": 80
+                  "hostPort": 80,
+                  "containerPort": 80
                 }
-            ],
+              ],
             "links": ["client", "server"],
-            "memory": 128  
+            "essential": true
         }
     ]
-
 }
