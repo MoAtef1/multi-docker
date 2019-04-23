@@ -4,39 +4,37 @@
         {
             "name": "client",
             "image": "muhammadatef/multi-client",
-            "hostname": "client" ,
-            "essintial": false ,
+            "hostname": "client",
+            "essintial": false,
             "memory": 128
         },
         {
             "name": "server",
             "image": "muhammadatef/multi-server",
             "hostname":"api",
-            "essintial": false ,
+            "essintial": false,
             "memory": 128
         },
         {
-            "name": "worker" ,
+            "name": "worker",
             "image":"muhammadatef/multi-worker",
             "hostname": "worker",
-            "essintial": false ,
+            "essintial": false,
             "memory": 128
         },
         {
-            "name": "nginx" ,
+            "name": "nginx",
             "image": "muhammadatef/multi-nginx",
-            "hostname": "nginx" ,
-            "essintial": true ,
+            "hostname": "nginx",
+            "essintial": true,
             "portMappings": [
                 {
-                    "hostport": 80 ,
+                    "hostport": 80,
                     "containerport": 80
                 }
             ],
             "links": ["client", "server"],
-            "memory": 128
-               
-            
+            "memory": 128  
         }
     ]
 
